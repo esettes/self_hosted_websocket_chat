@@ -31,3 +31,7 @@ Notes
   - First `CREATOR_SEED_LIMIT` visitors get a higher limit (`CREATOR_SEED_DAILY_LIMIT` chats per 24h per fingerprint)
   - Everyone else can create one chat per 24h
 - Reverse proxy: set `TRUST_PROXY_HOPS` to the number of proxies in front of the app (default `1` for a single Caddy proxy; use `2` if you add another proxy in front).
+
+#### Enjoy chat!
+
+<url>https://baky.dedyn.io/</url>

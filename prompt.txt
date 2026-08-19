@@ -1,0 +1,1 @@
+mi idea es un chat muy sencillo, en la pagina principal estará el chat principal, y luego habrá opción desde un boton/pestaña de crear un nuevo chat, se saltará a cada chat desde cada una de las pestañas en la página. Cuando se crea un nuevo chat, para añadir a otras personas, se mandará el enlace creado para ese chat

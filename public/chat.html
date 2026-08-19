@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat</title>
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="chat-header">
+        <div>
+          <a class="back-link" href="/">Volver</a>
+          <h1 id="chat-title">Chat</h1>
+        </div>
+
+        <div class="chat-meta">
+          <label class="field">
+            <span>Tu nombre (opcional)</span>
+            <input id="author" type="text" placeholder="Nombre" maxlength="60">
+          </label>
+          <div class="status" aria-live="polite">
+            <span class="status-dot"></span>
+            <span id="status">conectando</span>
+          </div>
+          <div class="chat-actions">
+            <button id="claim-chat" class="btn secondary" type="button">Reclamar chat</button>
+            <button id="delete-chat" class="btn danger" type="button">Eliminar chat</button>
+          </div>
+        </div>
+
+        <div class="share">
+          <span>Compartir enlace</span>
+          <div class="share-row">
+            <input id="share-link" type="text" readonly>
+            <button id="copy-link" class="btn secondary" type="button">Copiar</button>
+          </div>
+        </div>
+
+        <div class="passcode" id="passcode-box">
+          <span>Contraseña</span>
+          <div class="share-row">
+            <input id="passcode-value" type="text" readonly value="Oculta">
+            <button id="show-passcode" class="btn secondary" type="button">Mostrar contraseña</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div id="idle-gate" class="passcode-gate" hidden>
+          <div class="passcode-card">
+            <h2>Sesión inactiva</h2>
+            <p>Estuviste inactivo demasiado tiempo. Recarga para volver a entrar.</p>
+            <button id="reload-chat" class="btn" type="button">Recargar</button>
+          </div>
+        </div>
+
+        <div id="passcode-gate" class="passcode-gate" hidden>
+          <div class="passcode-card">
+            <h2>Introduce la contraseña</h2>
+            <p>Pide la contraseña a quien creó el chat.</p>
+            <form id="passcode-form" class="passcode-form">
+              <input id="passcode-input" type="text" placeholder="Contraseña" maxlength="5" autocomplete="one-time-code">
+              <button class="btn" type="submit">Desbloquear</button>
+            </form>
+            <p id="passcode-error" class="passcode-error" hidden>Contraseña incorrecta.</p>
+          </div>
+        </div>
+
+        <div id="chat-content">
+          <ul id="messages" class="message-list"></ul>
+          <form id="message-form" class="message-form">
+            <input id="message-input" type="text" placeholder="Escribe un mensaje" maxlength="2000">
+            <button class="btn" type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="active-count" class="active-count" hidden></div>
+
+    <script src="/js/auto-report.js"></script>
+    <script src="/js/chat.js"></script>
+  </body>
+</html>

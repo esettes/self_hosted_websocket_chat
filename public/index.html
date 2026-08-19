@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TKN chat</title>
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="home-page">
+    <main class="page">
+      <header class="hero">
+        <h1>TKN chat</h1>
+        <p class="kicker">
+          Crea un chat y comparte el enlace.
+        </p>
+        <p class="kicker">
+          Los chats se autodestruyen en 24 horas.
+        </p>
+      </header>
+
+      <section id="chats-panel" class="panel">
+        <h2>Chats activos</h2>
+        <ul id="chat-list" class="chat-list"></ul>
+        <p id="chat-empty" class="empty">Aún no hay chats.</p>
+      </section>
+
+      <div id="home-cta" class="home-cta">
+        <button id="new-chat-btn" class="btn" type="button">Nuevo chat</button>
+      </div>
+    </main>
+
+    <div id="new-chat-modal" class="modal" hidden>
+      <div class="modal-card">
+        <div class="modal-header">
+          <h2>Crear chat</h2>
+          <button id="new-chat-close" class="modal-close" type="button">Cerrar</button>
+        </div>
+        <form id="new-chat-form" class="modal-form">
+          <label class="field">
+            <span class="field-label-strong">Nombre del chat (opcional)</span>
+            <input id="new-chat-name" type="text" maxlength="60" placeholder="Reunión del equipo">
+          </label>
+          <div class="field">
+            <span class="field-label-strong">Tipo de chat</span>
+            <div class="privacy-options">
+              <label class="check-field">
+                <input id="new-chat-private" type="radio" name="new-chat-privacy" value="private" checked>
+                <span>Privado </span>
+              </label>
+              <label class="check-field">
+                <input id="new-chat-public" type="radio" name="new-chat-privacy" value="public">
+                <span>Público </span>
+              </label>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button id="new-chat-submit" class="btn" type="submit">Crear chat</button>
+            <button id="new-chat-cancel" class="btn secondary" type="button">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="active-count" class="active-count" hidden></div>
+
+    <script src="/js/auto-report.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
